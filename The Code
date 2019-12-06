@@ -1,0 +1,34 @@
+Module Module1
+    Structure Coordinates
+        Dim x(,) As Boolean
+        Dim y(,) As Boolean
+    End Structure
+    Structure Player
+        Dim size As Integer
+        Dim Colour As Integer
+        Dim Location As Coordinates
+    End Structure
+    Sub Main()
+
+        Dim player As Player
+        Dim playerx(100, 100) As Boolean
+        Dim playery(100, 100) As Boolean
+        player.Location.x = playerx
+        player.Location.y = playery
+        Dim y As Integer = 10
+        Dim x As Integer = 10
+
+        player.Location.x(x, y) = True
+
+        If player.Location.x(x, y) = True Then
+            Console.SetCursorPosition(x, y)
+            Console.BackgroundColor = ConsoleColor.Green
+            Console.WriteLine("  ")
+            Console.ResetColor()
+            Console.WriteLine()
+        End If
+
+        Console.ReadKey()
+    End Sub
+
+End Module
